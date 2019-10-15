@@ -29,25 +29,22 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-const without = function(source, itemsToRemove) {
- 
-  itemsToRemove.forEach(element => {
-    
-    for (let i = source.length - 1; i--;) {
-      if (source[i] === element) source.splice(i, 1);
+const flatten = function(x) {
+  let newArray = [];
+  x.forEach(element => {
+    if (Array.isArray(element) === true) {
+      element.forEach(element2 =>{
+        newArray.push(element2);
+      })
+    } else {
+      newArray.push(element);
     }
     
   });
+  console.log(newArray);
+  return newArray;
+}
 
-  return source;
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
 
-};
-
-without([1,2,3],[1,2]);
-
-const words = ["hello", "world", "lighthouse"];
-without(["hello", "world", "lighthouse"], ["lighthouse"]); // no need to capture return value for this test case
-// Make sure the original array was not altered by the without function
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
-assertArraysEqual(without([1,2,3],[1,2]),[3]);
-assertArraysEqual(without(["1",2,3],["1"]),[2,3]);
+flatten([[4,5],5,6,8,[9,50]]);
