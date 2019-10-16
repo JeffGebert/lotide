@@ -1,4 +1,4 @@
-const eqArrays = function(x,y) {
+`aconst eqArrays = function(x,y) {
   var length;
   var tracker;
   var similar;
