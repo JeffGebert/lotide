@@ -1,24 +1,24 @@
 const eqArrays = function(x,y) {
-  var length;
-  var tracker;
-  var similar;
+  let length;
+  let tracker;
+  let similar;
 
 
   similar = true;
 
-  if (x.length === y.length){
+  if (x.length === y.length) {
     length = x.length;
-    for (tracker=0; tracker <= length; tracker++){
-      if(x[tracker] !== y[tracker]){
+    for (tracker = 0; tracker <= length; tracker++) {
+      if (x[tracker] !== y[tracker]) {
         similar = false;
       }
     }
 
-  }else{
+  } else {
     similar = false;
   }
-return similar;
-}
+  return similar;
+};
 
 const assertArraysEqual = function(actual, expected) {
   if (eqArrays(actual, expected)) {
@@ -30,15 +30,16 @@ const assertArraysEqual = function(actual, expected) {
 
 
 const findKey = function(object, callback) {
- 
+  let item;
+
   for (item in object) {
   
-    if (callback(object[item])){
+    if (callback(object[item])) {
       return item;
     }
   }
 
-}
+};
 
 
 assertArraysEqual((findKey({
