@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@jeffgebert/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "A lighthouse labs student project to copy some functionality of lodash",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -19,7 +19,9 @@
     "type": "git",
     "url": "git+https://github.com/JeffGebert/lotide.git"
   },
-  "author": "",
+  "author": {
+    "name": "Jeff Gebert"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JeffGebert/lotide/issues"
