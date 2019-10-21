@@ -1,25 +1,5 @@
-const eqArrays = function(x,y) {
-  var length;
-  var tracker;
-  var similar;
-  console.log(x);
-  console.log(y);
+const eqArrays = require('./eqArrays');
 
-  similar = true;
-
-  if (x.length === y.length){
-    length = x.length;
-    for (tracker=0; tracker <= length; tracker++){
-      if(x[tracker] !== y[tracker]){
-        similar = false;
-      }
-    }
-
-  }else{
-    similar = false;
-  }
-return similar;
-}
 
 const assertArraysEqual = function(actual, expected) {
   if (eqArrays(actual, expected)) {
@@ -29,9 +9,4 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-
-assertArraysEqual([1, 2, 3], [1, 2, 3]);
-assertArraysEqual([1, 2, 3], [3, 2, 1]);
-
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]);
-assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); 
+module.exports = assertArraysEqual;
